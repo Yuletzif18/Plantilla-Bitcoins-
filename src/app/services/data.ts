@@ -21,57 +21,65 @@ export interface Seccion {
 })
 export class DataService {
   
+  /**
+   * Obtiene la lista de comercios afiliados
+   * @returns Observable con array de comercios
+   */
   getComercios(): Observable<Comercio[]> {
     return of([
       { 
         nombre: 'Estilo\'s Salón', 
-        imagen: 'https://prepanel.lncproducciones.com/upl/20250130232700_mainScreen_icon_Estilos.png',
+        imagen: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=300&h=300&fit=crop',
         descripcion: 'Salón de belleza y estética'
       },
       { 
         nombre: 'Farma Value', 
-        imagen: 'https://prepanel.lncproducciones.com/upl/20250130232527_mainScreen_icon_farmaValue.png',
+        imagen: 'https://images.unsplash.com/photo-1576602976047-174e57a47881?w=300&h=300&fit=crop',
         descripcion: 'Farmacia y productos de salud'
       },
       { 
         nombre: 'Donkey Mexican Fusion', 
-        imagen: 'https://prepanel.lncproducciones.com/upl/20250130232507_mainScreen_icon_donkey.png',
+        imagen: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=300&h=300&fit=crop',
         descripcion: 'Restaurante de comida mexicana'
       },
       { 
         nombre: 'La Tecleña', 
-        imagen: 'https://prepanel.lncproducciones.com/upl/20250130232102_mainScreen_icon_teclena.png',
+        imagen: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=300&h=300&fit=crop',
         descripcion: 'Panadería y pastelería'
       },
       { 
         nombre: 'Almacenes Simán', 
-        imagen: 'https://prepanel.lncproducciones.com/upl/20250130231856_mainScreen_icon_siman.png',
+        imagen: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=300&h=300&fit=crop',
         descripcion: 'Tienda departamental'
       },
       { 
         nombre: 'Super Selectos', 
-        imagen: 'https://prepanel.lncproducciones.com/upl/20250130231836_mainScreen_icon_selectos.png',
+        imagen: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=300&h=300&fit=crop',
         descripcion: 'Supermercado'
       },
       { 
         nombre: 'Ferreterías Freund', 
-        imagen: 'https://prepanel.lncproducciones.com/upl/20250130231816_mainScreen_icon_freund.png',
+        imagen: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=300&h=300&fit=crop',
         descripcion: 'Ferretería y materiales de construcción'
       },
       { 
         nombre: 'Tienda digital Winners', 
-        imagen: 'https://prepanel.lncproducciones.com/upl/20250130231754_logo_wincoins.png',
+        imagen: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=300&h=300&fit=crop',
         descripcion: 'Tienda en línea'
       }
     ]);
   }
 
+  /**
+   * Obtiene las secciones principales del sitio
+   * @returns Observable con array de secciones
+   */
   getSecciones(): Observable<Seccion[]> {
     return of([
       {
         titulo: 'Regístrate',
         encabezado: 'Sólo necesitas tener tu DUI a la mano y unos minutos para ser parte de Winners.',
-        imagen: 'https://prepanel.lncproducciones.com/upl/20250131000744_chrome_8LqJj198Ya.png',
+        imagen: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop',
         icono: 'fa-solid fa-mobile-screen-button',
         botonTexto: 'Regístrate ahora',
         botonUrl: 'https://registro.winners.sv'
@@ -79,7 +87,7 @@ export class DataService {
       {
         titulo: 'Acumula',
         encabezado: 'Acumula puntos cuando pagues con dinero tus compras del día a día.',
-        imagen: 'https://prepanel.lncproducciones.com/upl/20250131001018_chrome_11H8o9wEnv.png',
+        imagen: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&h=400&fit=crop',
         icono: 'fa-solid fa-store',
         botonTexto: 'Conoce más',
         botonUrl: '/personas/acumula'
@@ -87,7 +95,7 @@ export class DataService {
       {
         titulo: 'Redime',
         encabezado: 'Redime tus wincoins en cualquiera de nuestros comercios aliados.',
-        imagen: 'https://prepanel.lncproducciones.com/upl/20250131001222_chrome_PG0U8CsNGA.png',
+        imagen: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&h=400&fit=crop',
         icono: 'fa-solid fa-coins',
         botonTexto: 'Conoce más',
         botonUrl: '/personas/redime'

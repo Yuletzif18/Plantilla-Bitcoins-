@@ -1,6 +1,9 @@
 import { Injectable, PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
+/**
+ * Servicio para gestionar la reproducción de videos de YouTube en modales
+ */
 @Injectable({
   providedIn: 'root'
 })
@@ -11,10 +14,13 @@ export class VideoService {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
+  /**
+   * Abre un video de YouTube en un modal flotante
+   * @param videoId - ID del video de YouTube (ej: 'M4EzZnDoMhw')
+   */
   openYouTubeVideo(videoId: string) {
     if (!this.isBrowser) return;
 
-    // Crear modal para el video
     const modal = document.createElement('div');
     modal.className = 'video-modal';
     modal.innerHTML = `
@@ -37,7 +43,6 @@ export class VideoService {
       </div>
     `;
 
-    // Agregar estilos inline
     const style = document.createElement('style');
     style.textContent = `
       .video-modal {

@@ -36,10 +36,7 @@
       <div *ngFor="let post of postsFiltratos" class="col-lg-4 col-md-6 mb-4 pb-2">
         <div class="card blog-post border-0 shadow h-100 transition-all">
           <div class="position-relative overflow-hidden" style="height: 250px;">
-            <img [src]="post.imagen" 
-                 class="card-img-top w-100 h-100" 
-                 [alt]="post.titulo"
-                 style="object-fit: cover;">
+            <div [innerHTML]="getSvgBlog(post.emoji, post.color, post.titulo)" style="width:100%;height:100%;display:block;"></div>
             <span class="badge bg-primary-winners position-absolute top-2 start-2">
               {{ post.categoria }}
             </span>

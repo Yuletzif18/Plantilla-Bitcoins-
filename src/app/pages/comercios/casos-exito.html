@@ -1,0 +1,39 @@
+<div class="py-5">
+  <!-- Encabezado -->
+  <section class="bg-light py-5">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold text-primary mb-3">{{ title }}</h1>
+      <p class="lead text-secondary">Conoce cómo otros comercios han crecido con Winners</p>
+    </div>
+  </section>
+
+  <!-- Casos -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6" *ngFor="let caso of casos">
+          <div class="card h-100 border-0 shadow-sm overflow-hidden">
+            <div [innerHTML]="generarSvgCaso(caso.categoria, caso.emoji, caso.color)" style="height:200px; width:100%; display:block;"></div>
+            <div class="card-body p-4">
+              <span class="badge bg-primary mb-2">{{ caso.categoria }}</span>
+              <h5 class="card-title fw-bold">{{ caso.negocio }}</h5>
+              <p class="lead text-primary fw-bold mb-3">{{ caso.resultado }}</p>
+              <p class="card-text text-secondary">{{ caso.testimonio }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-5 bg-primary text-white text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-3">¿Tu negocio podría ser el próximo caso de éxito?</h2>
+      <p class="lead mb-4">Únete a los comercios que ya están ganando con Winners</p>
+      <a href="https://concd.me/contacto-comercios" target="_blank" class="btn btn-light btn-lg">
+        Contáctanos hoy
+      </a>
+    </div>
+  </section>
+</div>

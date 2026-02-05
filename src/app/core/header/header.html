@@ -1,9 +1,8 @@
 <header id="topnav" class="defaultscroll" [class.sticky]="isSticky" [class.nav-sticky]="isSticky">
   <div class="container">
     <!-- Logo container-->
-    <a class="logo" routerLink="/inicio">
-      <img src="assets/img/winners-logo-web.png" class="l-dark" height="40" alt="Winners Logo">
-      <img src="assets/img/winners-logo-web-blanco.png" class="l-light" height="40" alt="Winners Logo">
+    <a class="logo-text" routerLink="/inicio">
+      <span class="brand-name">INICIO</span>
     </a>
     <!-- End Logo container-->
     
@@ -24,15 +23,36 @@
     <div id="navigation" [style.display]="menuOpen ? 'block' : 'none'">
       <!-- Navigation Menu-->
       <ul class="navigation-menu nav-light">
+        <!-- Personas -->
         <li class="has-submenu parent-parent-menu-item montserrat-regular">
           <a routerLink="/personas" routerLinkActive="active">Personas</a>
+          <ul class="submenu">
+            <li><a routerLink="/personas/acumula" routerLinkActive="active">Acumula</a></li>
+            <li><a routerLink="/personas/redime" routerLinkActive="active">Redime</a></li>
+            <li><a routerLink="/personas/winncoins" routerLinkActive="active">Sobre WinCoins</a></li>
+            <li><a routerLink="/personas/referidos" routerLinkActive="active">Referidos</a></li>
+          </ul>
         </li>
+
+        <!-- Comercios -->
         <li class="has-submenu parent-parent-menu-item montserrat-regular">
           <a routerLink="/comercios" routerLinkActive="active">Comercios</a>
+          <ul class="submenu">
+            <li><a routerLink="/comercios/afiliate" routerLinkActive="active">Afíliate</a></li>
+            <li><a routerLink="/comercios/beneficios" routerLinkActive="active">Beneficios</a></li>
+            <li><a routerLink="/comercios/planes" routerLinkActive="active">Planes</a></li>
+            <li><a routerLink="/comercios/demo" routerLinkActive="active">Demo</a></li>
+            <li><a routerLink="/comercios/casos-exito" routerLinkActive="active">Casos de Éxito</a></li>
+            <li><a routerLink="/comercios/calificaciones" routerLinkActive="active">Calificaciones</a></li>
+          </ul>
         </li>
+
+        <!-- Legal -->
         <li class="has-submenu parent-parent-menu-item montserrat-regular">
           <a routerLink="/legal" routerLinkActive="active">Legal</a>
         </li>
+
+        <!-- Blog -->
         <li class="has-submenu parent-parent-menu-item montserrat-regular">
           <a routerLink="/blog" routerLinkActive="active">Blog</a>
         </li>

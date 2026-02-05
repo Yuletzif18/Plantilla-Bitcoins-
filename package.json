@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ssr": "ng build --configuration production",
+    "build:no-ssr": "ng build --configuration production-no-ssr",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:winners-angular-app": "node dist/winners-angular-app/server/server.mjs"

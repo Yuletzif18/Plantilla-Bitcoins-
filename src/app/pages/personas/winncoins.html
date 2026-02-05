@@ -1,0 +1,118 @@
+<div class="py-5">
+  <!-- Encabezado -->
+  <section class="bg-light py-5">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold text-primary mb-3">{{ title }}</h1>
+      <p class="lead text-secondary">Todo lo que necesitas saber sobre WinCoins</p>
+    </div>
+  </section>
+
+  <!-- Características principales -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6" *ngFor="let caracteristica of caracteristicas">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold text-primary mb-3">{{ caracteristica.titulo }}</h5>
+              <p class="card-text text-secondary">{{ caracteristica.descripcion }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo funcionan -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold">¿Cómo funcionan los WinCoins?</h2>
+      <div class="row align-items-center g-5">
+        <div class="col-md-6">
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="d-flex align-items-start">
+                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" 
+                     style="width: 50px; height: 50px; min-width: 50px;">
+                  <i class="fa-solid fa-shopping-cart"></i>
+                </div>
+                <div class="ms-3">
+                  <h5 class="fw-bold">Compra en comercios aliados</h5>
+                  <p class="text-secondary">Realiza tus compras en cualquier negocio de la red Winners</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="d-flex align-items-start">
+                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" 
+                     style="width: 50px; height: 50px; min-width: 50px;">
+                  <i class="fa-solid fa-coins"></i>
+                </div>
+                <div class="ms-3">
+                  <h5 class="fw-bold">Acumula WinCoins automáticamente</h5>
+                  <p class="text-secondary">Los puntos se suman a tu cuenta Winners instantáneamente</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="d-flex align-items-start">
+                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" 
+                     style="width: 50px; height: 50px; min-width: 50px;">
+                  <i class="fa-solid fa-gift"></i>
+                </div>
+                <div class="ms-3">
+                  <h5 class="fw-bold">Redime en cualquier comercio</h5>
+                  <p class="text-secondary">Usa tus WinCoins para obtener descuentos o productos gratis</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&h=600&fit=crop" alt="Cómo funcionan WinCoins" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas Frecuentes -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold">Preguntas Frecuentes</h2>
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item" *ngFor="let item of preguntas; let i = index">
+              <h2 class="accordion-header">
+                <button class="accordion-button" 
+                        type="button" 
+                        [attr.data-bs-target]="'#collapse' + i"
+                        [attr.aria-controls]="'collapse' + i">
+                  {{ item.pregunta }}
+                </button>
+              </h2>
+              <div [id]="'collapse' + i" 
+                   class="accordion-collapse collapse" 
+                   data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  {{ item.respuesta }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-5 bg-primary text-white text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-3">¿Listo para empezar a acumular?</h2>
+      <p class="lead mb-4">Descarga la app de Winners ahora y comienza a ganar WinCoins</p>
+      <a href="https://concd.me/getwinners" target="_blank" class="btn btn-light btn-lg">
+        Descargar App
+      </a>
+    </div>
+  </section>
+</div>

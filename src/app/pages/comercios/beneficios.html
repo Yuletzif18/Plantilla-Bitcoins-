@@ -1,0 +1,73 @@
+<div class="py-5">
+  <!-- Encabezado -->
+  <section class="bg-light py-5">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold text-primary mb-3">{{ title }}</h1>
+      <p class="lead text-secondary">Descubre cómo Winners puede transformar tu negocio</p>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" *ngFor="let beneficio of beneficios">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="mb-3">
+                <i [class]="beneficio.icono + ' fs-1 text-' + beneficio.color"></i>
+              </div>
+              <h5 class="card-title fw-bold">{{ beneficio.titulo }}</h5>
+              <p class="card-text text-secondary">{{ beneficio.descripcion }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estadísticas -->
+  <section class="py-5 bg-primary text-white">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-3">
+          <div class="mb-3">
+            <h2 class="display-5 fw-bold">500+</h2>
+            <p>Comercios afiliados</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mb-3">
+            <h2 class="display-5 fw-bold">50K+</h2>
+            <p>Usuarios activos</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mb-3">
+            <h2 class="display-5 fw-bold">$5M+</h2>
+            <p>En WinCoins canjeados</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mb-3">
+            <h2 class="display-5 fw-bold">98%</h2>
+            <p>Satisfacción de clientes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-5 bg-light text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-3">Únete a la comunidad Winners</h2>
+      <p class="lead text-secondary mb-4">
+        Empieza a recibir clientes que buscan redimir sus WinCoins
+      </p>
+      <a href="https://concd.me/contacto-comercios" target="_blank" class="btn btn-primary btn-lg">
+        Contáctanos ahora
+      </a>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,181 @@
+<div class="referidos-container">
+  <!-- Hero Section -->
+  <section class="hero-section py-5 text-white" style="background: linear-gradient(135deg, #6a0bad 0%, #00d4ff 100%);">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6" [@fadeInUp]>
+          <h1 class="display-5 fw-bold mb-3">{{ title }}</h1>
+          <p class="lead mb-4">{{ subtitle }}</p>
+          <div class="hero-buttons">
+            <a href="https://concd.me/getwinners" target="_blank" class="btn btn-light btn-lg me-3">
+              <i class="fas fa-mobile-screen"></i> Descargar App
+            </a>
+            <button class="btn btn-outline-light btn-lg">
+              <i class="fas fa-share"></i> Compartir
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center" [@scaleIn]>
+          <div [innerHTML]="getSvgHero()" class="img-fluid rounded-lg shadow-lg" style="display:inline-block; width:100%; max-width:400px;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pasos Section -->
+  <section class="pasos-section py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5" [@fadeInUp]>¿Cómo Funciona en 4 Pasos?</h2>
+      <div class="row g-4" [@listAnimation]>
+        <div *ngFor="let paso of pasos" class="col-lg-3 col-md-6">
+          <div class="paso-card card h-100 shadow-sm border-0 text-center hover-lift">
+            <div class="card-body p-4">
+              <div class="paso-number mb-3">{{ paso.numero }}</div>
+              <div class="paso-icon mb-3 fs-1">
+                <i [class]="paso.icono + ' text-primary'"></i>
+              </div>
+              <h5 class="card-title fw-bold mb-2">{{ paso.titulo }}</h5>
+              <p class="card-text text-secondary">{{ paso.descripcion }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios Section -->
+  <section class="beneficios-section py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5" [@fadeInUp]>Lo que Ganas con Cada Referido</h2>
+      <div class="row g-4" [@listAnimation]>
+        <div *ngFor="let beneficio of beneficios" class="col-lg-3 col-md-6">
+          <div class="beneficio-card card h-100 shadow-sm border-0 hover-lift">
+            <div class="card-body p-4 text-center">
+              <div class="beneficio-icon mb-3 fs-1">
+                <i [class]="beneficio.icono + ' text-primary'"></i>
+              </div>
+              <h5 class="card-title fw-bold mb-2">{{ beneficio.titulo }}</h5>
+              <p class="card-text text-secondary mb-3">{{ beneficio.descripcion }}</p>
+              <div class="beneficio-monto badge bg-primary fs-6">{{ beneficio.monto }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ejemplos de Ganancias Section -->
+  <section class="ejemplos-section py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5" [@fadeInUp]>Ejemplos de Ganancias</h2>
+      <div class="row g-4" [@listAnimation]>
+        <div *ngFor="let ejemplo of ejemplosCobro" class="col-lg-4 col-md-6">
+          <div class="ejemplo-card card h-100 shadow-sm border-0 hover-lift">
+            <div class="card-body p-4">
+              <div class="ejemplo-icon mb-3 fs-1 text-center">
+                <i [class]="ejemplo.icono + ' text-primary'"></i>
+              </div>
+              <h5 class="card-title fw-bold mb-2">{{ ejemplo.nombre }}</h5>
+              <p class="card-text text-muted mb-3">{{ ejemplo.objetivo }}</p>
+              <div class="ejemplo-calculo bg-light p-3 rounded">
+                <code class="text-primary fw-bold">{{ ejemplo.calculo }}</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5" [@fadeInUp]>Preguntas Frecuentes</h2>
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="accordion" [@listAnimation]>
+            <div *ngFor="let faq of preguntas; let i = index" class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button fs-6" type="button" 
+                        data-bs-toggle="collapse" 
+                        [attr.data-bs-target]="'#faq'+i" 
+                        aria-expanded="false">
+                  <i class="fas fa-question-circle me-2 text-primary"></i>{{ faq.pregunta }}
+                </button>
+              </h3>
+              <div [id]="'faq'+i" class="accordion-collapse collapse">
+                <div class="accordion-body text-secondary">
+                  {{ faq.respuesta }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final Section -->
+  <section class="cta-final py-5 text-white text-center" style="background: linear-gradient(135deg, #00d4ff 0%, #6a0bad 100%);">
+    <div class="container" [@fadeInUp]>
+      <h2 class="display-6 fw-bold mb-3">¡Comienza a Ganar Hoy!</h2>
+      <p class="lead mb-4">Descarga Winners y comparte tu código de referido</p>
+      <a href="https://concd.me/getwinners" target="_blank" class="btn btn-light btn-lg">
+        <i class="fas fa-arrow-right me-2"></i>Descargar App Ahora
+      </a>
+    </div>
+  </section>
+</div>
+
+<style>
+  .hero-image {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .hover-lift {
+    transition: all 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  .paso-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #6a0bad, #00d4ff);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0 auto;
+  }
+
+  .beneficio-monto {
+    font-size: 16px !important;
+  }
+
+  .ejemplo-calculo {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .accordion-button:not(.collapsed) {
+    background-color: #f8f9fa;
+    color: #6a0bad;
+  }
+
+  .accordion-button:focus {
+    border-color: #6a0bad;
+    box-shadow: 0 0 0 0.25rem rgba(106, 13, 173, 0.25);
+  }
+</style>

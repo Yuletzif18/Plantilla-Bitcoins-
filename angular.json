@@ -49,13 +49,34 @@
               ],
               "outputHashing": "all"
             },
+            "production-no-ssr": {
+              "outputMode": "static",
+              "server": false,
+              "ssr": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "outputMode": "static",
+              "server": false,
+              "ssr": false
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "production-no-ssr"
         },
         "serve": {
           "builder": "@angular/build:dev-server",

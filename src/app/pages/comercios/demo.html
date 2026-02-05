@@ -1,0 +1,83 @@
+<div class="py-5">
+  <!-- Encabezado -->
+  <section class="bg-light py-5">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold text-primary mb-3">{{ title }}</h1>
+      <p class="lead text-secondary">Explora las características de nuestra plataforma Winners</p>
+    </div>
+  </section>
+
+  <!-- Video o Demo -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe 
+              src="https://www.youtube.com/embed/M4EzZnDoMhw" 
+              title="Demo Winners"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h3 class="fw-bold mb-4">Conoce tu nueva herramienta de negocio</h3>
+          <p class="lead text-secondary mb-4">
+            Winners te proporciona una solución completa para atraer nuevos clientes y 
+            aumentar tus ventas. Con nuestra plataforma podrás:
+          </p>
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <i class="fa-solid fa-check text-success me-2"></i>
+              <strong>Procesar pagos</strong> con WinCoins y dinero en efectivo
+            </li>
+            <li class="mb-3">
+              <i class="fa-solid fa-check text-success me-2"></i>
+              <strong>Ver reportes</strong> de ventas en tiempo real
+            </li>
+            <li class="mb-3">
+              <i class="fa-solid fa-check text-success me-2"></i>
+              <strong>Gestionar clientes</strong> y sus transacciones
+            </li>
+            <li class="mb-3">
+              <i class="fa-solid fa-check text-success me-2"></i>
+              <strong>Crecer tu negocio</strong> con nuevos clientes
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Características -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold">Características principales</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3" *ngFor="let caracteristica of caracteristicas">
+          <div class="card h-100 text-center border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="mb-3">
+                <i [class]="caracteristica.icono + ' fs-1 text-primary'"></i>
+              </div>
+              <h5 class="card-title fw-bold">{{ caracteristica.titulo }}</h5>
+              <p class="card-text text-secondary">{{ caracteristica.descripcion }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-5 bg-primary text-white text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-3">¿Quieres una demostración en persona?</h2>
+      <p class="lead mb-4">Agendar una sesión personalizado para tu negocio</p>
+      <a href="https://concd.me/contacto-comercios" target="_blank" class="btn btn-light btn-lg">
+        Agendar ahora
+      </a>
+    </div>
+  </section>
+</div>

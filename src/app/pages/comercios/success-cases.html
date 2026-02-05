@@ -1,0 +1,167 @@
+<div class="success-cases-container">
+  <!-- Hero Section -->
+  <section class="hero-section py-5 text-white" style="background: linear-gradient(135deg, #6a0dad 0%, #00d4ff 100%);">
+    <div class="container text-center" [@fadeInUp]>
+      <h1 class="display-5 fw-bold mb-3">{{ title }}</h1>
+      <p class="lead">{{ subtitle }}</p>
+    </div>
+  </section>
+
+  <!-- Estadísticas Section -->
+  <section class="estadisticas-section py-5 bg-light">
+    <div class="container">
+      <div class="row g-4" [@listAnimation]>
+        <div *ngFor="let stat of estadisticas" class="col-lg-3 col-md-6">
+          <div class="stat-card text-center">
+            <div class="stat-icon mb-3">
+              <i [class]="stat.icono + ' fs-1 text-primary'"></i>
+            </div>
+            <h3 class="stat-number fw-bold mb-2">{{ stat.numero }}</h3>
+            <p class="stat-label text-secondary">{{ stat.label }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Casos de Éxito Section -->
+  <section class="casos-section py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5" [@fadeInUp]>Historias de Éxito Reales</h2>
+      <div class="row g-4" [@listAnimation]>
+        <div *ngFor="let caso of casos" class="col-lg-6 col-md-12">
+          <div class="caso-card card h-100 shadow-sm border-0 hover-lift">
+            <div class="caso-image">
+              <div [innerHTML]="generarSvgCaso(caso.categoria, caso.emoji, caso.color)" style="width:100%; height:100%; display:block;"></div>
+              <div class="caso-badge">
+                <span class="badge bg-primary">{{ caso.categoria }}</span>
+              </div>
+              <div class="caso-resultado">
+                <div class="resultado-box">
+                  <div class="resultado-numero fw-bold">{{ caso.resultado }}</div>
+                  <div class="resultado-tiempo" style="font-size: 12px;">{{ caso.tiempo }}</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold mb-3">{{ caso.titulo }}</h5>
+              <p class="card-text text-secondary">{{ caso.descripcion }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios Section -->
+  <section class="testimonios-section py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5" [@fadeInUp]>Lo Que Dicen Nuestros Clientes</h2>
+      <div class="row g-4" [@listAnimation]>
+        <div *ngFor="let testimonio of testimonios" class="col-lg-4 col-md-6">
+          <div class="testimonio-card card h-100 shadow-sm border-0">
+            <div class="card-body p-4">
+              <div class="stars mb-3">
+                <i *ngFor="let star of [1,2,3,4,5]" 
+                   [class]="star <= testimonio.stars ? 'fas fa-star text-warning' : 'fas fa-star text-muted'"></i>
+              </div>
+              <p class="card-text text-secondary mb-4">{{ testimonio.testimonial }}</p>
+              <hr>
+              <h6 class="fw-bold mb-1">{{ testimonio.nombre }}</h6>
+              <small class="text-muted">{{ testimonio.cargo }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section py-5 text-white" style="background: linear-gradient(135deg, #00d4ff 0%, #6a0dad 100%);">
+    <div class="container text-center" [@fadeInUp]>
+      <h2 class="display-6 fw-bold mb-3">¡Quieres ser el Próximo Caso de Éxito?</h2>
+      <p class="lead mb-4">Únete a cientos de comercios que ya están creciendo</p>
+      <a href="#" class="btn btn-light btn-lg">
+        <i class="fas fa-arrow-right me-2"></i>Solicita tu Afiliación
+      </a>
+    </div>
+  </section>
+</div>
+
+<style>
+  .hover-lift {
+    transition: all 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  .caso-image {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+  }
+
+  .caso-image img {
+    object-fit: cover;
+    height: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  .caso-card:hover .caso-image img {
+    transform: scale(1.05);
+  }
+
+  .caso-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+
+  .caso-resultado {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .resultado-box {
+    background: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+  }
+
+  .resultado-numero {
+    color: #6a0bad;
+    font-size: 18px;
+  }
+
+  .stat-card {
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .stat-number {
+    font-size: 36px;
+    color: #6a0bad;
+  }
+
+  .testimonio-card {
+    border-left: 4px solid #6a0bad;
+  }
+
+  .stars {
+    font-size: 18px;
+  }
+</style>

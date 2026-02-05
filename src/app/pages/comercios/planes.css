@@ -1,0 +1,56 @@
+/* Planes Component Styles */
+:host {
+  --primary: #6500b0;
+}
+
+.plan-destacado {
+  border-width: 2px !important;
+  transform: scale(1.05);
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: #5100a0;
+  border-color: #5100a0;
+}
+
+.btn-outline-primary {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--primary);
+  color: white;
+}
+
+.accordion-button:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(101, 0, 176, 0.25);
+}

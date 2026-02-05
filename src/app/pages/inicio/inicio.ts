@@ -20,22 +20,22 @@ export class InicioComponent implements OnInit, OnDestroy, AfterViewInit {
   private destroy$ = new Subject<void>();
   private isBrowser: boolean;
   
-  // Variables para el carrusel de logos
+  /** Variables para el carrusel de logos de comercios */
   private scrollLeft = 0;
   private scrollSpeed = 1.5;
   private animationFrameId?: number;
 
-  // Carrusel de imágenes del Hero
+  /** Hero carousel configuration */
   heroSlides = [
     {
-      imagen: 'https://prepanel.lncproducciones.com/upl/20250130212725_portada-2-modelo2.jpg',
+      imagen: 'https://images.unsplash.com/photo-1607082349566-187342175e2f?w=1920&h=800&fit=crop',
       titulo: 'Hacé tu vida más fácil',
       descripcion: 'acumulando y redimiendo tus WinCoins',
       botonTexto: 'Descargá la App',
       botonUrl: 'https://concd.me/getwinners'
     },
     {
-      imagen: 'https://prepanel.lncproducciones.com/upl/20250130212852_portada-2-modelo1.jpg',
+      imagen: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&h=800&fit=crop',
       titulo: 'Acumulá... Redimí... Disfrutá!',
       descripcion: '',
       botonTexto: 'Descargá la App',
@@ -60,7 +60,6 @@ export class InicioComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngAfterViewInit() {
     if (this.isBrowser) {
-      // Iniciar animación del carrusel de logos después de que la vista esté lista
       setTimeout(() => this.iniciarCarruselLogos(), 100);
     }
   }
@@ -69,12 +68,14 @@ export class InicioComponent implements OnInit, OnDestroy, AfterViewInit {
     this.destroy$.next();
     this.destroy$.complete();
     
-    // Cancelar animación del carrusel
     if (this.animationFrameId && this.isBrowser) {
       cancelAnimationFrame(this.animationFrameId);
     }
   }
 
+  /**
+   * Carga los datos de comercios y secciones desde el servicio
+   */
   private cargarDatos() {
     this.dataService.getComercios()
       .pipe(takeUntil(this.destroy$))
@@ -89,6 +90,10 @@ export class InicioComponent implements OnInit, OnDestroy, AfterViewInit {
       });
   }
 
+  /**
+   * Inicia el carrusel automático del hero
+   * Cambia de slide cada 5 segundos
+   */
   private iniciarCarruselHero() {
     if (this.isBrowser) {
       interval(5000)
@@ -97,6 +102,10 @@ export class InicioComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
+  /**
+   * Inicia la animación continua del carrusel de logos
+   * Usa requestAnimationFrame para una animación suave
+   */
   private iniciarCarruselLogos() {
     if (!this.carruselContainer || !this.isBrowser) return;
 
@@ -118,24 +127,39 @@ export class InicioComponent implements OnInit, OnDestroy, AfterViewInit {
     this.animationFrameId = requestAnimationFrame(animate);
   }
 
+  /**
+   * Avanza al siguiente slide del hero
+   */
   nextSlide() {
     this.currentSlideIndex = (this.currentSlideIndex + 1) % this.heroSlides.length;
   }
 
+  /**
+   * Retrocede al slide anterior del hero
+   */
   prevSlide() {
     this.currentSlideIndex = (this.currentSlideIndex - 1 + this.heroSlides.length) % this.heroSlides.length;
   }
 
+  /**
+   * Obtiene el slide actual del hero
+   */
   getCurrentSlide() {
     return this.heroSlides[this.currentSlideIndex];
   }
 
-  // Método para duplicar comercios para el efecto de loop infinito
+  /**
+   * Duplica el array de comercios para crear el efecto de loop infinito
+   */
   get comerciosDuplicados(): Comercio[] {
     return [...this.comercios, ...this.comercios];
   }
 
-  // Método para abrir video de YouTube
+  /**
+   * Abre el video de YouTube en un modal
+   * @param event - Evento del click
+   * @param videoId - ID del video de YouTube
+   */
   openVideo(event: Event, videoId: string = 'M4EzZnDoMhw') {
     event.preventDefault();
     this.videoService.openYouTubeVideo(videoId);

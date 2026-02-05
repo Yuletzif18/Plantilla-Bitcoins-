@@ -1,0 +1,29 @@
+.logo-text {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 0;
+}
+
+.brand-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.logo-text:hover .brand-name {
+  color: #667eea;
+}
+
+/* Sticky navbar - texto blanco */
+.nav-sticky .brand-name,
+.sticky .brand-name {
+  color: #fff;
+}
+
+.nav-sticky .logo-text:hover .brand-name,
+.sticky .logo-text:hover .brand-name {
+  color: #f093fb;
+}

@@ -1,0 +1,437 @@
+/* Referidos Component Styles */
+
+:host {
+  --color-primary: #6a0bad;
+  --color-secondary: #00d4ff;
+  --color-light: #f8f9fa;
+  --color-success: #28a745;
+}
+
+.referidos-container {
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  padding: 80px 0 60px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: white;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: white;
+  clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+  z-index: 2;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-section .lead {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  margin-bottom: 2rem;
+}
+
+.hero-image {
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Pasos Section */
+.pasos-section {
+  padding: 60px 0;
+  position: relative;
+  z-index: 3;
+  margin-top: -40px;
+}
+
+.paso-card {
+  padding: 40px 30px;
+  background: white;
+  border-radius: 1rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.paso-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(106, 13, 173, 0.15);
+}
+
+.paso-number {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(106, 13, 173, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.paso-card:hover .paso-number {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.paso-card h5 {
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.paso-card p {
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.conector {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: -50px;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), transparent);
+}
+
+@media (min-width: 992px) {
+  .conector {
+    display: block;
+  }
+
+  .paso-card:last-child .conector {
+    display: none;
+  }
+}
+
+/* Beneficios Section */
+.beneficios-section {
+  padding: 60px 0;
+  background: var(--color-light);
+}
+
+.beneficio-card {
+  padding: 40px 30px;
+  border-radius: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.beneficio-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.beneficio-card:hover::before {
+  transform: scaleX(1);
+}
+
+.beneficio-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(106, 13, 173, 0.15);
+}
+
+.beneficio-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.beneficio-card h5 {
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.beneficio-card p {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.beneficio-monto {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-success), #20c997);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* Ejemplos Section */
+.ejemplos-section {
+  padding: 60px 0;
+}
+
+.ejemplo-card {
+  border-radius: 1rem;
+  padding: 30px;
+  background: linear-gradient(135deg, #f8f9fa, white);
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.ejemplo-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 15px 40px rgba(106, 13, 173, 0.1);
+}
+
+.ejemplo-numero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border-radius: 50%;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ejemplo-card h6 {
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.ejemplo-dato {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e9ecef;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.ejemplo-dato:last-child {
+  border-bottom: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.dato-label {
+  font-weight: 500;
+}
+
+.dato-valor {
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 60px 0;
+  background: var(--color-light);
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 10px 25px rgba(106, 13, 173, 0.1);
+}
+
+.faq-header {
+  background: white;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq-header:hover {
+  background: linear-gradient(135deg, rgba(106, 13, 173, 0.05), rgba(0, 212, 255, 0.05));
+}
+
+.faq-header.collapsed {
+  color: #1a1a1a;
+}
+
+.faq-header.show {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+}
+
+.faq-header h6 {
+  margin: 0;
+  font-weight: 600;
+  flex: 1;
+}
+
+.faq-icon {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-header.show .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-body {
+  background: white;
+  padding: 1.5rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.faq-body p {
+  margin: 0;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* CTA Section */
+.cta-section {
+  position: relative;
+  padding: 80px 0;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: white;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" stroke="white" stroke-width="2"/></svg>');
+  background-repeat: repeat;
+  background-size: 120px 120px;
+  pointer-events: none;
+}
+
+.cta-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta-section .lead {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  margin-bottom: 2rem;
+}
+
+.cta-section .btn-light {
+  font-weight: 600;
+  padding: 0.75rem 2.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.cta-section .btn-light:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section .lead {
+    font-size: 1rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .paso-number {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .beneficio-monto {
+    font-size: 1rem;
+  }
+
+  .ejemplo-card {
+    padding: 20px;
+  }
+}
+
+/* Animation utilities */
+.hover-zoom:hover {
+  transform: scale(1.05);
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+}

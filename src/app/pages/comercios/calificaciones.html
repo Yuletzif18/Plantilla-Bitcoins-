@@ -1,0 +1,71 @@
+<div class="py-5">
+  <!-- Encabezado -->
+  <section class="bg-light py-5">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold text-primary mb-3">{{ title }}</h1>
+      <p class="lead text-secondary">Descubre los comercios mejor evaluados por nuestros usuarios</p>
+    </div>
+  </section>
+
+  <!-- Filtros -->
+  <section class="py-4 bg-white">
+    <div class="container">
+      <div class="text-center">
+        <div class="btn-group" role="group">
+          <button 
+            *ngFor="let categoria of filtroCategorias"
+            type="button" 
+            class="btn" 
+            [ngClass]="categoriaSeleccionada === categoria ? 'btn-primary' : 'btn-outline-primary'"
+            (click)="filtrar(categoria)">
+            {{ categoria }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lista de comercios -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" *ngFor="let comercio of comerciosFiltrados">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-start mb-3">
+                <div [innerHTML]="getSvgAvatar(comercio.emoji, comercio.color)" class="me-3" style="width:60px;height:60px;border-radius:50%;display:inline-block;"></div>
+                <div>
+                  <h5 class="card-title fw-bold mb-1">{{ comercio.nombre }}</h5>
+                  <span class="badge bg-secondary">{{ comercio.categoria }}</span>
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <div class="d-flex align-items-center">
+                  <div class="text-warning me-2">
+                    <i class="fa-solid fa-star" *ngFor="let i of getEstrellasArray(comercio.calificacion)"></i>
+                  </div>
+                  <span class="fw-bold">{{ comercio.calificacion }}</span>
+                  <span class="text-secondary ms-2">({{ comercio.resenas }} reseñas)</span>
+                </div>
+              </div>
+
+              <button class="btn btn-primary w-100">Ver comercio</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-5 bg-light text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-3">¿Tu comercio no está aquí?</h2>
+      <p class="lead text-secondary mb-4">Únete a los mejores comercios de Winners hoy mismo</p>
+      <a href="https://concd.me/contacto-comercios" target="_blank" class="btn btn-primary btn-lg">
+        Afiliarme ahora
+      </a>
+    </div>
+  </section>
+</div>
