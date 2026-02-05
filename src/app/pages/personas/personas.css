@@ -1,0 +1,83 @@
+/* Personas Page Styles */
+
+.card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(106, 13, 173, 0.15) !important;
+}
+
+.icon {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Step numbers */
+.step-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6a0dad, #9d4edd);
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.card:hover .step-number {
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 5px 15px rgba(106, 13, 173, 0.3);
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: slideIn 0.6s ease-out;
+}
+
+/* Section backgrounds */
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+/* Text styling */
+.text-primary-winners {
+  color: #6a0dad !important;
+}
+
+.btn-primary-winners {
+  background-color: #6a0mad;
+  border-color: #6a0mad;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-winners:hover {
+  background-color: #9d4edd;
+  border-color: #9d4edd;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(106, 13, 173, 0.3);
+}

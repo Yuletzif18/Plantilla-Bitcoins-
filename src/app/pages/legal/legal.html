@@ -1,0 +1,123 @@
+<!-- Hero Section -->
+<section class="bg-half-170 d-table w-100 bg-primary-winners">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12 text-center">
+        <div class="page-next-level">
+          <h1 class="title text-white amaranth-bold">Información Legal</h1>
+          <p class="text-white-50 para-desc mb-0 mx-auto montserrat-regular">
+            Términos, condiciones y políticas de privacidad
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Legal Content -->
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <!-- Tabs Navigation -->
+        <ul class="nav nav-tabs mb-4" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link"
+                    [class.active]="activeTab === 'terminos'"
+                    (click)="activeTab = 'terminos'"
+                    type="button"
+                    role="tab">
+              Términos y Condiciones
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link"
+                    [class.active]="activeTab === 'privacidad'"
+                    (click)="activeTab = 'privacidad'"
+                    type="button"
+                    role="tab">
+              Política de Privacidad
+            </button>
+          </li>
+        </ul>
+
+        <!-- Términos y Condiciones -->
+        <div *ngIf="activeTab === 'terminos'" [@fadeIn]>
+          <div class="card border-0 shadow">
+            <div class="card-body p-5">
+              <h3 class="amaranth-bold text-primary-winners mb-4">Términos y Condiciones</h3>
+              <p class="text-muted montserrat-regular lead">
+                Bienvenido a Winners. Al utilizar nuestra aplicación y servicios, usted acepta los siguientes términos y condiciones.
+              </p>
+              
+              <div *ngFor="let seccion of terminos" class="mt-4">
+                <h5 class="amaranth-bold text-primary-winners mb-3">{{ seccion.titulo }}</h5>
+                <p class="text-muted montserrat-regular">
+                  {{ seccion.contenido }}
+                </p>
+              </div>
+
+              <div class="mt-5 pt-4 border-top">
+                <p class="text-muted small montserrat-regular">
+                  <strong>Última actualización:</strong> Febrero 2026<br>
+                  <strong>Contacto:</strong> soporte@winners.sv<br>
+                  <strong>Teléfono:</strong> +503 2511 2500
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Política de Privacidad -->
+        <div *ngIf="activeTab === 'privacidad'" [@fadeIn]>
+          <div class="card border-0 shadow">
+            <div class="card-body p-5">
+              <h3 class="amaranth-bold text-primary-winners mb-4">Política de Privacidad</h3>
+              <p class="text-muted montserrat-regular lead">
+                En Winners, nos comprometemos a proteger su privacidad. Esta política describe cómo recopilamos, utilizamos y protegemos su información.
+              </p>
+
+              <div *ngFor="let seccion of privacidad" class="mt-4">
+                <h5 class="amaranth-bold text-primary-winners mb-3">{{ seccion.titulo }}</h5>
+                <p class="text-muted montserrat-regular">
+                  {{ seccion.contenido }}
+                </p>
+              </div>
+
+              <div class="mt-5 pt-4 border-top">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <h6 class="amaranth-bold text-primary-winners">Contacto</h6>
+                    <p class="text-muted small montserrat-regular">
+                      Winners SA de CV<br>
+                      San Salvador, El Salvador<br>
+                      Email: privacidad@winners.sv
+                    </p>
+                  </div>
+                  <div class="col-md-6">
+                    <h6 class="amaranth-bold text-primary-winners">Información de Actualización</h6>
+                    <p class="text-muted small montserrat-regular">
+                      <strong>Última actualización:</strong> Febrero 2026<br>
+                      <strong>Efectiva desde:</strong> Enero 2026
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Questions Section -->
+        <div class="card border-0 bg-light mt-5">
+          <div class="card-body p-4 text-center">
+            <h5 class="amaranth-bold text-primary-winners mb-2">¿Tienes preguntas?</h5>
+            <p class="text-muted montserrat-regular mb-0">
+              Si tienes dudas sobre nuestros términos o políticas, no dudes en contactarnos en 
+              <strong>soporte@winners.sv</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+/* Comercios Page Styles */
+
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(106, 13, 173, 0.15) !important;
+}
+
+.step-number {
+  transition: all 0.3s ease;
+}
+
+.card:hover .step-number {
+  transform: scale(1.1);
+}
+
+/* List items with checkmarks */
+.list-unstyled li {
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+}
+
+.list-unstyled li i {
+  transition: all 0.3s ease;
+}
+
+.list-unstyled li:hover i {
+  transform: scale(1.2);
+}
+
+/* Button animation */
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}

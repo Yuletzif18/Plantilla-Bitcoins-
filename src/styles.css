@@ -1,0 +1,81 @@
+/* Importar Bootstrap y CSS */
+@import 'assets/css/bootstrap.min.css';
+@import 'assets/css/style.min.css';
+@import 'assets/css/corporate.css';
+
+/* Material Design Icons desde CDN */
+@import url('https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css');
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bg-primary-winners {
+  background-color: #6a0dad !important;
+}
+
+.text-primary-winners {
+  color: #6a0dad !important;
+}
+
+.btn-primary-winners {
+  background-color: #6a0dad;
+  border-color: #6a0dad;
+  color: white;
+}
+
+.btn-primary-winners:hover {
+  background-color: #5a0b9d;
+  border-color: #5a0b9d;
+}
+
+.amaranth-bold {
+  font-family: 'Amaranth', cursive;
+  font-weight: 700;
+}
+
+.montserrat-regular {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.montserrat-bold {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.bg-footer {
+  background-color: #202942 !important;
+  color: #adb5bd;
+}
+
+.footer-head {
+  color: white;
+  font-weight: 500;
+}
+
+.footer-list li a {
+  color: #adb5bd;
+  text-decoration: none;
+}
+
+.footer-list li a:hover {
+  color: #6a0dad;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+.mt-60 {
+  margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+  .mt-100 { margin-top: 60px; }
+  .mt-60 { margin-top: 40px; }
+}

@@ -1,0 +1,103 @@
+<!-- Hero Section -->
+<section class="bg-half-170 d-table w-100 bg-primary-winners">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12 text-center">
+        <div class="page-next-level">
+          <h1 class="title text-white amaranth-bold">{{ title }}</h1>
+          <p class="text-white-50 para-desc mb-0 mx-auto montserrat-regular">
+            Acumula wincoins en tus compras diarias y disfruta de beneficios exclusivos
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cómo Funciona -->
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="section-title text-center mb-4 pb-2">
+          <h2 class="amaranth-bold text-primary-winners">¿Cómo funciona?</h2>
+          <p class="text-muted para-desc mx-auto mb-0 montserrat-regular">
+            Es muy fácil empezar a acumular y redimir tus wincoins
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4 mt-md-5">
+      <div *ngFor="let paso of pasos; let i = index" class="col-md-4 mb-4" [@fadeIn]>
+        <div class="card border-0 shadow text-center h-100 position-relative">
+          <div class="position-absolute top-0 start-50 translate-middle-x" style="width: 50px; height: 50px; background: linear-gradient(135deg, #6a0dad, #9d4edd); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <span class="text-white fw-bold amaranth-bold" style="font-size: 24px;">{{ paso.numero }}</span>
+          </div>
+          <div class="card-body pt-5">
+            <div class="icon mb-3">
+              <i [class]="paso.icono + ' text-primary-winners'" style="font-size: 50px;"></i>
+            </div>
+            <h4 class="amaranth-bold text-primary-winners">{{ paso.titulo }}</h4>
+            <p class="text-muted montserrat-regular">
+              {{ paso.descripcion }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Beneficios -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-4 pb-2">
+      <div class="col-12 text-center">
+        <div class="section-title">
+          <h2 class="amaranth-bold text-primary-winners">Beneficios Exclusivos</h2>
+          <p class="text-muted para-desc mx-auto mb-0 montserrat-regular">
+            Disfruta de todos estos beneficios como miembro de Winners
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4 mt-md-5">
+      <div *ngFor="let beneficio of beneficios" class="col-md-4 mb-4" [@fadeIn]>
+        <div class="card border-0 text-center h-100">
+          <div class="card-body">
+            <div class="icon mb-3">
+              <i [class]="beneficio.icono + ' text-primary-winners'" style="font-size: 60px;"></i>
+            </div>
+            <h4 class="amaranth-bold text-primary-winners">{{ beneficio.titulo }}</h4>
+            <p class="text-muted montserrat-regular">
+              {{ beneficio.descripcion }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <div class="section-title mb-4 pb-2">
+          <h2 class="amaranth-bold text-primary-winners">¡Comienza ahora!</h2>
+          <p class="text-muted para-desc mx-auto mb-0 montserrat-regular">
+            Únete a miles de usuarios que ya están disfrutando de WINNERS
+          </p>
+        </div>
+        <a href="https://concd.me/getwinners" 
+           target="_blank" 
+           class="btn btn-lg btn-primary-winners montserrat-bold mt-3">
+          Descarga la App Ahora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

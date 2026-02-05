@@ -1,0 +1,144 @@
+<!-- Hero Start - Carrusel -->
+<section class="swiper-slider-hero position-relative d-block vh-100">
+  <div *ngIf="getCurrentSlide(); let slide = $implicit" 
+       class="slide-inner slide-bg-image d-flex align-items-center" 
+       [style.backgroundImage]="'url(' + slide.imagen + ')'">
+    <div class="bg-overlay bg-linear-gradient"></div>
+    <div class="bg-overlay bg-linear-gradient"></div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div class="title-heading text-center">
+            <h1 class="fw-semibold display-3 text-white title-dark mb-4 amaranth-bold">
+              {{ slide.titulo }}
+            </h1>
+            <p *ngIf="slide.descripcion" class="para-desc mx-auto text-light">
+              {{ slide.descripcion }}
+            </p>
+            <div class="mt-4 pt-2">
+              <a [href]="slide.botonUrl" 
+                 target="_blank" 
+                 class="btn btn-lg btn-primary-winners montserrat-bold">
+                {{ slide.botonTexto }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Controles del carrusel -->
+    <button (click)="prevSlide()" class="swiper-button-prev border rounded-circle text-center">
+      <i class="mdi mdi-chevron-left"></i>
+    </button>
+    <button (click)="nextSlide()" class="swiper-button-next border rounded-circle text-center">
+      <i class="mdi mdi-chevron-right"></i>
+    </button>
+  </div>
+</section>
+<!-- Hero End -->
+
+<!-- Features Start -->
+<section class="section">
+  <!-- Region: Promociones -->
+  <div class="container mt-100 mt-60">
+    <div class="row align-items-center">
+      <div class="col-lg-5 col-md-6 order-1 order-md-2">
+        <div class="features-absolute">
+          <div class="position-relative">
+            <img src="https://prepanel.lncproducciones.com/upl/20250130215134_imagen-compra.jpg" 
+                 class="img-fluid rounded shadow" 
+                 alt="Ofertas">
+            <div class="play-icon">
+              <a href="#" 
+                 (click)="openVideo($event, 'M4EzZnDoMhw')" 
+                 class="play-btn lightbox">
+                <i class="mdi mdi-play text-primary rounded-circle bg-white shadow"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7 col-md-6 order-2 order-md-1">
+        <div class="row">
+          <div class="col-lg-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+            <div class="card features feature-primary">
+              <i class="uil uil-bitcoin-circle icon h1 d-block"></i>
+            </div>
+          </div>
+
+          <div class="col-lg-8 col-12 mt-4 mt-lg-0 pt-2 pt-lg-0">
+            <div class="card features feature-primary">
+              <p class="h1 text-primary-winners amaranth-bold">¡Obten las mejores promociones!</p>
+              <p class="text-muted mt-2 mb-0 fs-4 montserrat-regular">
+                Con la aplicación de Winners, podrás redimir tus Wincoins en los comercios afiliados en nuestra plataforma.
+              </p>
+              <a href="https://concd.me/getwinners" 
+                 target="_blank" 
+                 class="btn btn-sm btn-primary-winners fs-6 mt-3">
+                Descarga nuestra aplicación
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comercios Afiliados -->
+  <div class="container mt-100 mt-60">
+    <div class="row justify-content-center mb-5">
+      <div class="col-12">
+        <a id="marcas"></a>
+        <h1 class="text-center amaranth-bold text-primary-winners">Comercios Afiliados</h1>
+        <h3 class="h5 text-dark text-center fs-5 montserrat-regular">
+          ¡Redime tus puntos en nuestra red de comercios aliados!
+        </h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col mt-3 mb-5 pb-5">
+        <div class="carrusel" role="region" aria-label="Logo carrusel">
+          <div class="carrusel-container" #carruselContainer role="list">
+            <div *ngFor="let comercio of comerciosDuplicados" class="carrusel-item" role="listitem">
+              <img [src]="comercio.imagen" 
+                   [alt]="comercio.nombre" 
+                   class="img-carrusel-logo rounded">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secciones: Regístrate, Acumula, Redime -->
+  <div class="container mt-100 mt-60 mb-100 mb-60">
+    <div class="row">
+      <div *ngFor="let seccion of secciones" class="col-md-4 mb-4">
+        <div class="card border-0 h-100">
+          <img [src]="seccion.imagen" 
+               class="card-img-top img-fluid" 
+               [alt]="seccion.titulo" 
+               style="height: 300px; object-fit: contain;">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <div class="icon mb-3">
+                <i [class]="seccion.icono" style="font-size: 80px; color: #6a0dad;"></i>
+              </div>
+              <h3 class="amaranth-bold text-primary-winners">{{ seccion.titulo }}</h3>
+              <p class="montserrat-regular">{{ seccion.encabezado }}</p>
+            </div>
+            <a [href]="seccion.botonUrl" 
+               [target]="seccion.botonUrl.startsWith('http') ? '_blank' : '_self'"
+               class="btn btn-warning text-white fw-bold mt-3">
+              {{ seccion.botonTexto }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Features End -->

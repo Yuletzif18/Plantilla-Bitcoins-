@@ -1,0 +1,136 @@
+<!-- Hero Section -->
+<section class="bg-half-170 d-table w-100 bg-primary-winners">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12 text-center">
+        <div class="page-next-level">
+          <h1 class="title text-white amaranth-bold">{{ title }}</h1>
+          <p class="text-white-50 para-desc mb-0 mx-auto montserrat-regular">
+            Aumenta tus ventas y fideliza a tus clientes con nuestro sistema de lealtad
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Beneficios para Comercios -->
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center mb-4 pb-2">
+      <div class="col-12">
+        <div class="section-title text-center">
+          <h2 class="amaranth-bold text-primary-winners">Beneficios para tu negocio</h2>
+          <p class="text-muted para-desc mx-auto mb-0 montserrat-regular">
+            Únete a nuestra red de comercios y haz crecer tu negocio
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4 mt-md-5" [@listAnimation]="beneficios">
+      <div *ngFor="let beneficio of beneficios" class="col-md-6 mb-4">
+        <div class="card border-0 shadow h-100">
+          <div class="card-body">
+            <div class="icon mb-3">
+              <i [class]="beneficio.icono + ' text-primary-winners'" style="font-size: 40px;"></i>
+            </div>
+            <h4 class="amaranth-bold text-primary-winners">{{ beneficio.titulo }}</h4>
+            <p class="text-muted montserrat-regular">
+              {{ beneficio.descripcion }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cómo empezar -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-4 pb-2">
+      <div class="col-12 text-center">
+        <div class="section-title">
+          <h2 class="amaranth-bold text-primary-winners">¿Cómo empezar?</h2>
+          <p class="text-muted para-desc mx-auto mb-0 montserrat-regular">
+            Solo 3 simples pasos para afiliarte a WINNERS
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4 mt-md-5">
+      <div *ngFor="let paso of pasos; let i = index" class="col-md-4 mb-4">
+        <div class="card border-0 text-center h-100">
+          <div class="position-relative mb-3">
+            <div class="step-number" style="background: linear-gradient(135deg, #6a0dad, #9d4edd); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+              <span class="text-white fw-bold amaranth-bold" style="font-size: 28px;">{{ paso.numero }}</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h4 class="amaranth-bold text-primary-winners">{{ paso.titulo }}</h4>
+            <p class="text-muted montserrat-regular">
+              {{ paso.descripcion }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Requisitos -->
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="section-title text-center mb-4 pb-2">
+          <h2 class="amaranth-bold text-primary-winners">Requisitos para afiliarse</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <ul class="list-unstyled space-y-3">
+          <li class="d-flex align-items-center">
+            <i class="fa-solid fa-check text-primary-winners me-3" style="font-size: 24px;"></i>
+            <span class="montserrat-regular">Ser un comercio legalmente constituido</span>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="fa-solid fa-check text-primary-winners me-3" style="font-size: 24px;"></i>
+            <span class="montserrat-regular">Contar con punto de venta físico</span>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="fa-solid fa-check text-primary-winners me-3" style="font-size: 24px;"></i>
+            <span class="montserrat-regular">Aceptar nuestros términos y condiciones</span>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="fa-solid fa-check text-primary-winners me-3" style="font-size: 24px;"></i>
+            <span class="montserrat-regular">Contar con acceso a internet</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section bg-primary-winners">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <h2 class="amaranth-bold text-white mb-3">¡Crece con WINNERS!</h2>
+        <p class="text-white-50 para-desc mx-auto mb-0 montserrat-regular mb-4">
+          Únete a cientos de comercios que ya están multiplicando sus ventas
+        </p>
+        <a href="https://comercios.winners.sv/" 
+           target="_blank" 
+           class="btn btn-lg btn-warning text-dark fw-bold montserrat-bold">
+          Afíliate Ahora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
