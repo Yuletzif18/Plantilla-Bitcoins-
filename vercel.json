@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build:no-ssr",
+  "outputDirectory": "dist/winners-angular-app/browser",
+  "devCommand": "npm start",
+  "framework": "angular",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
